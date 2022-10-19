@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <style>
+        pre {
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+    </style>
+    <title>Web Assembly(wasm)</title>
+</head>
+
+<body>
+<script type="module">
+    import init, {generate_seed} from "./pkg/wasm_rust_demo.js"
+
+    init().then(() => {
+        document.body.innerHTML = "<pre>\n" + generate_seed() + "\n</pre>";
+        // document.body.append(generate_seed());
+        // document.body.append("</p>");
+    })
+</script>
+<!--<script>-->
+<!--    WebAssembly.instantiateStreaming(fetch('./pkg/wasm_rust_demo_bg.wasm'),).then((results) => {-->
+<!--        const generate_seed = results.instance.exports.generate_seed-->
+<!--        console.log(generate_seed())-->
+<!--        console.log(generate_seed())-->
+<!--        console.log(generate_seed())-->
+<!--        console.log(generate_seed())-->
+<!--    })-->
+<!--</script>-->
+<h1>Moontity Web</h1>
+<p>Your seed is:</p>
+
+</body>
+
+</html>
